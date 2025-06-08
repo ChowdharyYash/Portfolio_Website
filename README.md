@@ -1,6 +1,6 @@
 # 🚀 Yash Chowdhary - Data Science Portfolio
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-brightgreen)](YOUR_URL_HERE)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-brightgreen)](https://chowdharyyash.github.io/Portfolio_Website/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/yash1120)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/ChowdharyYash)
 
@@ -8,7 +8,7 @@ Welcome to my personal portfolio website! This site showcases my journey as a **
 
 ## 🌟 Live Demo
 
-🔗 **[Visit my portfolio](YOUR_URL_HERE)**
+🔗 **[Visit my portfolio](https://chowdharyyash.github.io/Portfolio_Website/)**
 
 ## 📋 Overview
 
@@ -127,6 +127,5 @@ This portfolio is open source and available under the MIT License. Feel free to 
 
 ---
 
-**Currently seeking full-time opportunities in Data Science and Machine Learning!**
+**Seeking Opportunities in Data Science and Machine Learning!**
 
-Last updated: January 2025
