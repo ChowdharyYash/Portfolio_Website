@@ -1,0 +1,679 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	
+	CUSTOMIZED FOR: Yash Chowdhary - About Me Page
+-->
+<html>
+	<head>
+		<title>About Me - Yash Chowdhary</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- ADDED: Font Awesome for icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+		
+		<!-- ADDED: Same custom CSS as main page for consistency -->
+		<style>
+			/* Professional Data Science Color Scheme - UPDATED */
+			:root {
+				--primary-dark: #0A192F;
+				--primary-light: #112240;
+				--accent-blue: #4A90E2;
+				--accent-purple: #7B68EE;
+				--accent-cyan: #00D9FF;
+				--text-light: #CCD6F6;
+				--text-slate: #8892B0;
+				--bg-gradient: linear-gradient(135deg, #0A192F 0%, #112240 50%, #1a2744 100%);
+			}
+			
+			body {
+				background: var(--primary-dark);
+			}
+			
+			#wrapper {
+				background: var(--bg-gradient);
+			}
+			
+			.button {
+				border-color: var(--accent-blue) !important;
+				color: var(--accent-blue) !important;
+			}
+			
+			.button:hover {
+				background-color: var(--accent-blue) !important;
+				color: var(--primary-dark) !important;
+			}
+			
+			/* Timeline styling for experience */
+			.timeline {
+				position: relative;
+				padding: 2em 0;
+			}
+			
+			.timeline::before {
+				content: '';
+				position: absolute;
+				left: 50px;
+				top: 0;
+				bottom: 0;
+				width: 2px;
+				background: var(--accent-blue);
+			}
+			
+			.timeline-item {
+				position: relative;
+				padding-left: 80px;
+				margin-bottom: 3em;
+			}
+			
+			.timeline-item::before {
+				content: '';
+				position: absolute;
+				left: 42px;
+				top: 5px;
+				width: 16px;
+				height: 16px;
+				background: var(--accent-blue);
+				border-radius: 50%;
+				box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+			}
+			
+			.timeline-item h3 {
+				color: var(--accent-blue);
+				margin-bottom: 0.5em;
+			}
+			
+			.timeline-item .date {
+				color: var(--text-slate);
+				font-size: 0.9em;
+				margin-bottom: 0.5em;
+			}
+			
+			/* Education cards */
+			.education-card {
+				background: rgba(17, 34, 64, 0.3);
+				padding: 2em;
+				margin-bottom: 2em;
+				border-radius: 8px;
+				border: 1px solid rgba(74, 144, 226, 0.2);
+				transition: all 0.3s ease;
+			}
+			
+			.education-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 20px rgba(74, 144, 226, 0.2);
+				border-color: var(--accent-blue);
+			}
+			
+			.education-card h3 {
+				color: var(--accent-blue);
+			}
+			
+			/* UPDATED: Certification badges with better colors */
+			.certifications {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1em;
+				margin: 2em 0;
+			}
+			
+			.cert-badge {
+				background: rgba(74, 144, 226, 0.1);
+				border: 1px solid var(--accent-blue);
+				padding: 0.5em 1em;
+				border-radius: 20px;
+				color: var(--accent-blue);
+				font-size: 0.9em;
+				transition: all 0.3s ease;
+			}
+			
+			.cert-badge:hover {
+				background: var(--accent-blue);
+				color: var(--primary-dark);
+				transform: translateY(-2px);
+			}
+			
+			/* Link colors */
+			a {
+				color: var(--accent-blue);
+			}
+			
+			a:hover {
+				color: var(--accent-purple);
+			}
+			
+			/* Navigation links */
+			#nav .links a {
+				color: var(--text-light);
+			}
+			
+			#nav .links a:hover,
+			#nav .links li.active a {
+				color: var(--accent-blue);
+			}
+			
+			/* Headers - FIXED visibility issue */
+			h1 {
+				color: #FFFFFF !important;
+				text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+			}
+			
+			/* About Me page specific - Enhanced gradient title */
+			.post header.major h1 {
+				background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 50%, var(--accent-cyan) 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				text-shadow: none;
+				font-weight: 800;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				position: relative;
+				display: inline-block;
+				animation: gradient-shift 3s ease infinite;
+			}
+			
+			/* Animated gradient shift */
+			@keyframes gradient-shift {
+				0% { background-position: 0% 50%; }
+				50% { background-position: 100% 50%; }
+				100% { background-position: 0% 50%; }
+			}
+			
+			/* Add decorative line under About Me */
+			.post header.major h1::after {
+				content: '';
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 150px;
+				height: 4px;
+				background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+				border-radius: 2px;
+				animation: line-pulse 2s ease-in-out infinite;
+			}
+			
+			@keyframes line-pulse {
+				0%, 100% { opacity: 0.5; width: 150px; }
+				50% { opacity: 1; width: 200px; }
+			}
+			
+			/* Add glow effect on hover */
+			.post header.major h1:hover {
+				filter: drop-shadow(0 0 20px rgba(74, 144, 226, 0.5));
+				cursor: default;
+			}
+			
+			h2 {
+				color: #FFFFFF !important;
+			}
+			
+			h3 {
+				color: var(--accent-blue) !important;
+			}
+			
+			.major h1 {
+				font-size: 2.5em;
+				margin-bottom: 0.5em;
+			}
+			
+			.major p {
+				color: var(--text-light);
+				font-size: 1.2em;
+			}
+			
+			/* Primary button styling */
+			.button.primary {
+				background-color: var(--accent-blue) !important;
+				color: white !important;
+				border: 2px solid var(--accent-blue) !important;
+			}
+			
+			.button.primary:hover {
+				background-color: transparent !important;
+				color: var(--accent-blue) !important;
+			}
+			
+			/* Skill progress bars */
+			.skill-item {
+				margin-bottom: 1.5em;
+			}
+			
+			.skill-header {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 0.5em;
+			}
+			
+			.skill-name {
+				color: var(--text-light);
+				font-weight: 500;
+			}
+			
+			.skill-level {
+				color: var(--accent-blue);
+				font-size: 0.9em;
+			}
+			
+			.skill-bar {
+				background: rgba(17, 34, 64, 0.3);
+				height: 8px;
+				border-radius: 4px;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.skill-progress {
+				height: 100%;
+				background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+				border-radius: 4px;
+				transition: width 1.5s ease;
+				position: relative;
+			}
+			
+			.skill-progress::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+				animation: shimmer 2s infinite;
+			}
+			
+			@keyframes shimmer {
+				0% { transform: translateX(-100%); }
+				100% { transform: translateX(100%); }
+			}
+			
+			/* Animated background for hero */
+			.post header.major {
+				position: relative;
+				padding: 3em 0;
+			}
+			
+			.post header.major::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -20%;
+				width: 140%;
+				height: 100%;
+				background: radial-gradient(ellipse at center, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+				animation: pulse 4s ease-in-out infinite;
+			}
+			
+			@keyframes pulse {
+				0%, 100% { transform: scale(1); opacity: 0.5; }
+				50% { transform: scale(1.1); opacity: 0.3; }
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Yash Chowdhary</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Portfolio</a></li>
+							<li class="active"><a href="about.html">About Me</a></li>
+							<!-- COMMENTED: Third page for future use -->
+							<!-- <li><a href="blog.html">Blog & Articles</a></li> -->
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/yash1120" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/ChowdharyYash" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:chowdhary.y@northeastern.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>About Me</h1>
+									<p>Passionate Data Scientist | Machine Learning Enthusiast | Problem Solver</p>
+								</header>
+
+								<!-- CHANGED: Added comprehensive about section with visual timeline -->
+								<h2>My Journey</h2>
+								<div style="background: rgba(74, 144, 226, 0.05); padding: 2em; border-radius: 12px; margin-bottom: 2em;">
+									<p>Hello! I'm Yash Chowdhary, a data science professional currently pursuing my Master's in Data Analytics at Northeastern University. With over 3.5 years of hands-on experience in data analysis, machine learning, and business intelligence, I've developed a strong foundation in transforming complex data into actionable business strategies.</p>
+									
+									<div style="display: flex; justify-content: space-around; margin: 2em 0; flex-wrap: wrap; gap: 1em; text-align: center;">
+										<div>
+											<h3 style="color: var(--accent-blue); margin: 0;">3.5+</h3>
+											<p style="color: var(--text-slate); margin: 0;">Years Experience</p>
+										</div>
+										<div>
+											<h3 style="color: var(--accent-blue); margin: 0;">15K+</h3>
+											<p style="color: var(--text-slate); margin: 0;">Data Points Analyzed</p>
+										</div>
+										<div>
+											<h3 style="color: var(--accent-blue); margin: 0;">20+</h3>
+											<p style="color: var(--text-slate); margin: 0;">Projects Delivered</p>
+										</div>
+										<div>
+											<h3 style="color: var(--accent-blue); margin: 0;">94.6%</h3>
+											<p style="color: var(--text-slate); margin: 0;">Peak Model Accuracy</p>
+										</div>
+									</div>
+									
+									<p>My journey in data science began with a fascination for how data can tell stories and drive decisions. From building ETL pipelines that reduced processing time by 8% to developing ML models that increased customer retention by 10%, I've consistently delivered value through data-driven solutions. My approach combines technical expertise with business acumen to solve real-world challenges.</p>
+								</div>
+
+								<hr />
+
+								<h2>Education</h2>
+								<div class="education-card">
+									<h3>Master of Science in Data Analytics</h3>
+									<p><strong>Northeastern University, Boston, MA</strong> | Expected Spring 2026 | GPA: 3.8/4.0</p>
+									<p><strong>Relevant Coursework:</strong> Applied Machine Learning, Database Management Systems, Data Science Computation & Visualization, Data Warehouse & Business Intelligence, Data Mining</p>
+								</div>
+								
+								<div class="education-card">
+									<h3>Bachelor of Business Administration</h3>
+									<p><strong>ITM University, Gujarat, India</strong> | Sep 2017 - May 2020</p>
+									<p>Built a strong foundation in business fundamentals that complements my technical skills in data science.</p>
+								</div>
+
+								<hr />
+
+								<h2>Professional Experience</h2>
+								<div class="timeline">
+									<div class="timeline-item">
+										<h3>Academic Data Scientist Intern</h3>
+										<p class="date">Buyer Folio Inc., Boston, MA | Jan 2025 - Apr 2025</p>
+										<ul>
+											<li>Gathered, cleaned, and pre-processed housing market datasets using Python, R, and PySpark</li>
+											<li>Performed EDA to uncover trends in housing preferences and pricing using Pandas, NumPy, and visualization libraries</li>
+											<li>Developed predictive models for housing demand forecasting using TensorFlow, XGBoost, and LightGBM</li>
+											<li>Built dynamic dashboards with Plotly & Tableau for custom reporting</li>
+										</ul>
+									</div>
+									
+									<div class="timeline-item">
+										<h3>Research Data Assistant - AI Synthetic Data</h3>
+										<p class="date">Northeastern University, Boston, MA | May 2024 - Apr 2025</p>
+										<ul>
+											<li>Assisted in digital transformation of 15,000+ student academic performance records</li>
+											<li>Analyzed 20+ peer-reviewed research papers to identify gaps in synthetic data detection methods</li>
+											<li>Developing ML models using Python & TensorFlow to detect AI-generated content</li>
+											<li>Documented research methodologies ensuring reproducibility and clarity</li>
+										</ul>
+									</div>
+									
+									<div class="timeline-item">
+										<h3>Data Analyst</h3>
+										<p class="date">Techno Plus Plastics, Gujarat, India | Jun 2020 - Dec 2023</p>
+										<ul>
+											<li>Developed 5 ETL pipelines reducing processing time by 8%</li>
+											<li>Analyzed 12,800 customer behavior patterns, increasing retention by 10%</li>
+											<li>Built 5 interactive Power BI dashboards for real-time KPI monitoring</li>
+											<li>Improved inventory accuracy by 12% using advanced Excel and Salesforce CRM</li>
+											<li>Designed optimized data models in SQL Server and Snowflake</li>
+										</ul>
+									</div>
+								</div>
+
+								<hr />
+
+								<h2>Technical Expertise</h2>
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<h3>Programming & Analytics</h3>
+										<div class="skill-item">
+											<div class="skill-header">
+												<span class="skill-name">Python</span>
+												<span class="skill-level">Expert</span>
+											</div>
+											<div class="skill-bar">
+												<div class="skill-progress" style="width: 80%"></div>
+											</div>
+										</div>
+										<div class="skill-item">
+											<div class="skill-header">
+												<span class="skill-name">R</span>
+												<span class="skill-level">Advanced</span>
+											</div>
+											<div class="skill-bar">
+												<div class="skill-progress" style="width: 70%"></div>
+											</div>
+										</div>
+										<div class="skill-item">
+											<div class="skill-header">
+												<span class="skill-name">SQL</span>
+												<span class="skill-level">Expert</span>
+											</div>
+											<div class="skill-bar">
+												<div class="skill-progress" style="width: 78%"></div>
+											</div>
+										</div>
+										<div class="skill-item">
+											<div class="skill-header">
+												<span class="skill-name">Machine Learning</span>
+												<span class="skill-level">Advanced</span>
+											</div>
+											<div class="skill-bar">
+												<div class="skill-progress" style="width: 70%"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-6 col-12-small">
+										<h3>Tools & Technologies</h3>
+										<div class="skill-item">
+											<div class="skill-header">
+												<span class="skill-name">TensorFlow/PyTorch</span>
+												<span class="skill-level">Advanced</span>
+											</div>
+											<div class="skill-bar">
+												<div class="skill-progress" style="width: 65%"></div>
+											</div>
+										</div>
+										<div class="skill-item">
+											<div class="skill-header">
+												<span class="skill-name">Tableau/Power BI</span>
+												<span class="skill-level">Expert</span>
+											</div>
+											<div class="skill-bar">
+												<div class="skill-progress" style="width: 90%"></div>
+											</div>
+										</div>
+										<div class="skill-item">
+											<div class="skill-header">
+												<span class="skill-name">CLoud</span>
+												<span class="skill-level">Intermediate</span>
+											</div>
+											<div class="skill-bar">
+												<div class="skill-progress" style="width: 50%"></div>
+											</div>
+										</div>
+										<div class="skill-item">
+											<div class="skill-header">
+												<span class="skill-name">Big Data (Hadoop/Spark)</span>
+												<span class="skill-level">Intermediate</span>
+											</div>
+											<div class="skill-bar">
+												<div class="skill-progress" style="width: 60%"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<hr />
+
+								<h2>Certifications & Achievements</h2>
+								<div class="certifications">
+									<span class="cert-badge">IBM Data Science Professional</span>
+									<span class="cert-badge">Google Analytics Certified</span>
+									<span class="cert-badge">HackerRank Problem Solving</span>
+									<span class="cert-badge">LinkedIn Learning Courses</span>
+									<span class="cert-badge">Employee of the Year - Techno Plus</span>
+									<span class="cert-badge">Certified Yoga Instructor</span>
+								</div>
+
+								<hr />
+
+								<h2>Beyond Data Science</h2>
+								<p>When I'm not immersed in data and algorithms, you'll find me exploring the latest tech trends, reading research papers, or mentoring aspiring data professionals. I believe in maintaining a healthy work-life balance through regular exercise and yoga practice. As a certified referee and yoga instructor, I understand the importance of discipline, focus, and continuous learning - principles I apply to my data science career.</p>
+								
+								<p>I'm also an avid coffee enthusiast (it fuels those late-night coding sessions!) and enjoy engaging with the data science community through forums and meetups. I'm particularly fascinated by the intersection of artificial intelligence and real-world problem-solving, always looking for innovative ways to apply emerging technologies to create meaningful impact.</p>
+								
+								<div style="display: flex; justify-content: space-around; margin: 2em 0; flex-wrap: wrap; gap: 2em;">
+									<div style="text-align: center;">
+										<i class="fas fa-coffee" style="font-size: 3em; color: var(--accent-blue); margin-bottom: 0.5em; display: block;"></i>
+										<p style="color: var(--text-slate); margin: 0;">Coffee Enthusiast</p>
+									</div>
+									<div style="text-align: center;">
+										<i class="fas fa-dumbbell" style="font-size: 3em; color: var(--accent-blue); margin-bottom: 0.5em; display: block;"></i>
+										<p style="color: var(--text-slate); margin: 0;">Fitness & Yoga</p>
+									</div>
+									<div style="text-align: center;">
+										<i class="fas fa-users" style="font-size: 3em; color: var(--accent-blue); margin-bottom: 0.5em; display: block;"></i>
+										<p style="color: var(--text-slate); margin: 0;">Community Mentor</p>
+									</div>
+									<div style="text-align: center;">
+										<i class="fas fa-book" style="font-size: 3em; color: var(--accent-blue); margin-bottom: 0.5em; display: block;"></i>
+										<p style="color: var(--text-slate); margin: 0;">Research Reader</p>
+									</div>
+								</div>
+
+								<hr />
+
+								<h2>What I'm Looking For</h2>
+								<p>I'm actively seeking full-time opportunities where I can leverage my skills in machine learning, data analysis, and business intelligence to drive innovation and create value. I'm particularly interested in roles that offer:</p>
+								<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5em; margin: 2em 0;">
+									<div style="background: rgba(74, 144, 226, 0.1); padding: 1.5em; border-radius: 8px; border-left: 4px solid var(--accent-blue);">
+										<i class="fas fa-puzzle-piece" style="color: var(--accent-blue); font-size: 1.5em; margin-bottom: 0.5em; display: block;"></i>
+										<strong style="color: var(--text-light);">Challenging Problems</strong>
+										<p style="margin: 0.5em 0 0; font-size: 0.9em;">Creative data-driven solutions for complex business challenges</p>
+									</div>
+									<div style="background: rgba(74, 144, 226, 0.1); padding: 1.5em; border-radius: 8px; border-left: 4px solid var(--accent-blue);">
+										<i class="fas fa-rocket" style="color: var(--accent-blue); font-size: 1.5em; margin-bottom: 0.5em; display: block;"></i>
+										<strong style="color: var(--text-light);">Cutting-edge Tech</strong>
+										<p style="margin: 0.5em 0 0; font-size: 0.9em;">Working with the latest ML/AI technologies and frameworks</p>
+									</div>
+									<div style="background: rgba(74, 144, 226, 0.1); padding: 1.5em; border-radius: 8px; border-left: 4px solid var(--accent-blue);">
+										<i class="fas fa-users-cog" style="color: var(--accent-blue); font-size: 1.5em; margin-bottom: 0.5em; display: block;"></i>
+										<strong style="color: var(--text-light);">Collaborative Culture</strong>
+										<p style="margin: 0.5em 0 0; font-size: 0.9em;">Teams where I can learn, contribute, and grow together</p>
+									</div>
+									<div style="background: rgba(74, 144, 226, 0.1); padding: 1.5em; border-radius: 8px; border-left: 4px solid var(--accent-blue);">
+										<i class="fas fa-chart-line" style="color: var(--accent-blue); font-size: 1.5em; margin-bottom: 0.5em; display: block;"></i>
+										<strong style="color: var(--text-light);">Business Impact</strong>
+										<p style="margin: 0.5em 0 0; font-size: 0.9em;">Projects that drive real value and improve decision-making</p>
+									</div>
+								</div>
+
+								<hr />
+
+								<h2>Let's Connect!</h2>
+								<p>I'm always excited to discuss data science, share insights, or explore potential collaborations. Whether you have an interesting project, a challenging problem, or just want to chat about the latest in ML/AI, feel free to reach out!</p>
+								
+								<ul class="actions">
+									<li><a href="mailto:chowdhary.y@northeastern.edu" class="button primary">Email Me</a></li>
+									<li><a href="https://www.linkedin.com/in/yash1120" class="button" target="_blank">Connect on LinkedIn</a></li>
+									<li><a href="https://github.com/ChowdharyYash" class="button" target="_blank">View GitHub</a></li>
+								</ul>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section class="alt">
+								<h3>Location</h3>
+								<p>United States</p>
+							</section>
+							<!-- REMOVED: Phone section -->
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:chowdhary.y@northeastern.edu">chowdhary.y@northeastern.edu</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/yash1120" class="icon brands alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/ChowdharyYash" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+									<li><a href="mailto:chowdhary.y@northeastern.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; 2025 Yash Chowdhary</li><li>Design: <a href="https://html5up.net">HTML5 UP</a> | Customized for Data Science Portfolio</li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+			<!-- ADDED: Enhanced animations -->
+			<script>
+				// Animate skill bars on scroll
+				function animateSkillBars() {
+					const skillBars = document.querySelectorAll('.skill-progress');
+					skillBars.forEach(bar => {
+						const width = bar.style.width;
+						bar.style.width = '0';
+						setTimeout(() => {
+							bar.style.width = width;
+						}, 200);
+					});
+				}
+				
+				// Intersection Observer for skill bars
+				const skillObserver = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							animateSkillBars();
+							skillObserver.unobserve(entry.target);
+						}
+					});
+				});
+				
+				const skillSection = document.querySelector('.row');
+				if (skillSection) {
+					skillObserver.observe(skillSection);
+				}
+				
+				// Add hover effect to timeline items
+				document.querySelectorAll('.timeline-item').forEach(item => {
+					item.addEventListener('mouseenter', function() {
+						this.style.transform = 'translateX(10px)';
+						this.style.transition = 'all 0.3s ease';
+					});
+					item.addEventListener('mouseleave', function() {
+						this.style.transform = 'translateX(0)';
+					});
+				});
+			</script>
+
+	</body>
+</html>

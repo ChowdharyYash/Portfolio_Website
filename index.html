@@ -1,0 +1,728 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	
+	CUSTOMIZED FOR: Yash Chowdhary - Data Science Portfolio
+	Enhanced with creative elements and animations
+-->
+<html>
+	<head>
+		<!-- CHANGED: Updated title for Yash Chowdhary -->
+		<title>Yash Chowdhary | Data Scientist</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- ADDED: SEO meta tags for better visibility -->
+		<meta name="description" content="Data Science Masters student at Northeastern University specializing in Machine Learning, AI, and Business Analytics">
+		<meta name="keywords" content="Yash Chowdhary, Data Science, Machine Learning, AI, Python, SQL, Business Analytics">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- ADDED: Font Awesome for icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+		
+		<!-- ADDED: Custom CSS for professional data science theme with enhanced creativity -->
+		<style>
+			/* Professional Data Science Color Scheme - ENHANCED */
+			:root {
+				--primary-dark: #0A192F;
+				--primary-light: #112240;
+				--accent-blue: #4A90E2;
+				--accent-purple: #7B68EE;
+				--accent-cyan: #00D9FF;
+				--text-light: #CCD6F6;
+				--text-slate: #8892B0;
+				--bg-gradient: linear-gradient(135deg, #0A192F 0%, #112240 50%, #1a2744 100%);
+			}
+			
+			/* Override default colors for futuristic tech theme */
+			body {
+				background: var(--primary-dark);
+			}
+			
+			#wrapper {
+				background: var(--bg-gradient);
+			}
+			
+			#intro {
+				background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), 
+							url('images/bg-intro.jpg') center/cover;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			/* Animated particles background */
+			#intro::before {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-image: radial-gradient(2px 2px at 20% 30%, white, transparent),
+								  radial-gradient(2px 2px at 60% 70%, white, transparent),
+								  radial-gradient(1px 1px at 50% 50%, white, transparent);
+				background-size: 50vw 50vh;
+				background-position: 0 0;
+				animation: stars 20s linear infinite;
+				opacity: 0.3;
+			}
+			
+			@keyframes stars {
+				to {
+					background-position: -50vw -50vh;
+				}
+			}
+			
+			/* UPDATED: Header with typing animation */
+			#intro h1 {
+				color: #FFFFFF;
+				text-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+				position: relative;
+			}
+			
+			/* Typing cursor effect */
+			.typing-cursor::after {
+				content: '|';
+				animation: blink 1s infinite;
+				color: var(--accent-cyan);
+			}
+			
+			@keyframes blink {
+				0%, 50% { opacity: 1; }
+				51%, 100% { opacity: 0; }
+			}
+			
+			#intro p {
+				color: var(--text-light);
+				animation: fadeInUp 1s ease-out 0.5s both;
+			}
+			
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			
+			/* UPDATED: Button colors with glow effect */
+			.button {
+				border-color: var(--accent-blue) !important;
+				color: var(--accent-blue) !important;
+				position: relative;
+				transition: all 0.3s ease;
+			}
+			
+			.button:hover {
+				background-color: var(--accent-blue) !important;
+				color: var(--primary-dark) !important;
+				box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+				transform: translateY(-2px);
+			}
+			
+			/* Professional avatar placeholder with animation */
+			.avatar-placeholder {
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 60px;
+				color: var(--primary-dark);
+				font-weight: bold;
+				margin: 0 auto 2em;
+				box-shadow: 0 0 30px rgba(74, 144, 226, 0.3);
+				animation: pulse 2s ease-in-out infinite;
+			}
+			
+			@keyframes pulse {
+				0%, 100% { transform: scale(1); }
+				50% { transform: scale(1.05); }
+			}
+			
+			/* Tech-themed article styling with enhanced hover */
+			article {
+				background: rgba(17, 34, 64, 0.3);
+				border: 1px solid rgba(74, 144, 226, 0.1);
+				transition: all 0.4s ease;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			article::before {
+				content: '';
+				position: absolute;
+				top: -2px;
+				left: -2px;
+				right: -2px;
+				bottom: -2px;
+				background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple), var(--accent-cyan));
+				opacity: 0;
+				z-index: -1;
+				transition: opacity 0.4s ease;
+				filter: blur(10px);
+			}
+			
+			article:hover {
+				border-color: transparent;
+				transform: translateY(-5px);
+				box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+			}
+			
+			article:hover::before {
+				opacity: 0.3;
+			}
+			
+			/* Enhanced skills section with animated progress bars */
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1.5em;
+				margin: 2em 0;
+			}
+			
+			.skill-category {
+				background: rgba(17, 34, 64, 0.5);
+				padding: 1.5em;
+				border-radius: 12px;
+				border: 1px solid rgba(74, 144, 226, 0.2);
+				position: relative;
+				overflow: hidden;
+				transition: all 0.3s ease;
+			}
+			
+			.skill-category::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 3px;
+				background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+				transform: translateX(-100%);
+				transition: transform 0.6s ease;
+			}
+			
+			.skill-category:hover::before {
+				transform: translateX(0);
+			}
+			
+			.skill-category h4 {
+				color: var(--accent-blue);
+				margin-bottom: 0.5em;
+				font-size: 1.1em;
+			}
+			
+			.skill-category p {
+				color: var(--text-slate);
+				font-size: 0.9em;
+				line-height: 1.6;
+			}
+			
+			/* Stats counter section */
+			.stats-section {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+				gap: 2em;
+				margin: 3em 0;
+				text-align: center;
+			}
+			
+			.stat-item {
+				padding: 1em;
+			}
+			
+			.stat-number {
+				font-size: 2.5em;
+				font-weight: bold;
+				color: var(--accent-blue);
+				display: block;
+				margin-bottom: 0.2em;
+			}
+			
+			.stat-label {
+				color: var(--text-slate);
+				font-size: 0.9em;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+			
+			/* Link colors */
+			a {
+				color: var(--accent-blue);
+			}
+			
+			a:hover {
+				color: var(--accent-purple);
+			}
+			
+			/* Navigation links */
+			#nav .links a {
+				color: var(--text-light);
+				position: relative;
+			}
+			
+			#nav .links a::after {
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				width: 0;
+				height: 2px;
+				background: var(--accent-blue);
+				transition: width 0.3s ease;
+			}
+			
+			#nav .links a:hover::after,
+			#nav .links li.active a::after {
+				width: 100%;
+			}
+			
+			#nav .links a:hover,
+			#nav .links li.active a {
+				color: var(--accent-blue);
+			}
+			
+			/* Project tags */
+			.project-tags {
+				margin-top: 1em;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5em;
+			}
+			
+			.tag {
+				background: rgba(74, 144, 226, 0.1);
+				color: var(--accent-blue);
+				padding: 0.25em 0.75em;
+				border-radius: 15px;
+				font-size: 0.8em;
+				border: 1px solid rgba(74, 144, 226, 0.3);
+			}
+			
+			/* Quote section */
+			.quote-section {
+				background: rgba(17, 34, 64, 0.2);
+				padding: 2em;
+				margin: 2em 0;
+				border-left: 4px solid var(--accent-blue);
+				position: relative;
+			}
+			
+			.quote-section::before {
+				content: '"';
+				font-size: 4em;
+				color: var(--accent-blue);
+				position: absolute;
+				top: -20px;
+				left: 20px;
+				opacity: 0.3;
+			}
+			
+			.quote-text {
+				font-style: italic;
+				color: var(--text-light);
+				font-size: 1.2em;
+				margin-bottom: 0.5em;
+			}
+			
+			.quote-author {
+				color: var(--accent-blue);
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<!-- CHANGED: Updated with Yash's information -->
+						<h1 class="typing-cursor">Yash<br />
+						Chowdhary</h1>
+						<!-- CHANGED: Professional summary based on resume and GitHub bio -->
+						<p>Data Science Masters Student at Northeastern University<br />
+						Transforming raw data into actionable insights through Machine Learning & AI<br />
+						Building intelligent solutions that drive business value</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Explore My Work</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<!-- CHANGED: Updated logo text -->
+						<a href="index.html" class="logo">Yash Chowdhary</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<!-- CHANGED: Updated navigation for 2-page portfolio -->
+							<li class="active"><a href="index.html">Portfolio</a></li>
+							<li><a href="about.html">About Me</a></li>
+							<!-- COMMENTED: Third page for future use -->
+							<!-- <li><a href="blog.html">Blog & Articles</a></li> -->
+						</ul>
+						<ul class="icons">
+							<!-- CHANGED: Updated with Yash's actual social links -->
+							<li><a href="https://www.linkedin.com/in/yash1120" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/ChowdharyYash" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:chowdhary.y@northeastern.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="#">Welcome to My<br />
+									Data Science Journey</a></h2>
+									<!-- CHANGED: Added professional summary -->
+									<p>As a Master's student in Data Analytics at Northeastern University with 3.5+ years of professional experience,<br />
+									I specialize in transforming complex data into strategic business insights using Machine Learning, AI, and advanced analytics.<br />
+									My passion lies at the intersection of technology and business problem-solving.</p>
+								</header>
+								<!-- CHANGED: Added avatar placeholder instead of personal photo -->
+								<div class="avatar-placeholder">YC</div>
+								
+								<!-- ADDED: Quote section -->
+								<div class="quote-section">
+									<p class="quote-text">"In God we trust. All others must bring data."</p>
+									<p class="quote-author">— W. Edwards Deming</p>
+								</div>
+								
+								<!-- ADDED: Stats section -->
+								<div class="stats-section">
+									<div class="stat-item">
+										<span class="stat-number">3.5+</span>
+										<span class="stat-label">Years Experience</span>
+									</div>
+									<div class="stat-item">
+										<span class="stat-number">15K+</span>
+										<span class="stat-label">Records Analyzed</span>
+									</div>
+									<div class="stat-item">
+										<span class="stat-number">94.6%</span>
+										<span class="stat-label">ML Model Accuracy</span>
+									</div>
+									<div class="stat-item">
+										<span class="stat-number">10%</span>
+										<span class="stat-label">Customer Retention ↑</span>
+									</div>
+								</div>
+								
+								<!-- ADDED: Skills section with enhanced styling -->
+								<h3 style="text-align: center; color: #fff; margin: 2em 0 1em;">Core Competencies</h3>
+								<div class="skills-grid">
+									<div class="skill-category">
+										<h4>🚀 Languages & Tools</h4>
+										<p>Python, R, SQL, HTML<br />PyTorch, TensorFlow, Scikit-learn</p>
+									</div>
+									<div class="skill-category">
+										<h4>📊 Data Visualization</h4>
+										<p>Tableau, Power BI, Matplotlib<br />Seaborn, Plotly, Alteryx</p>
+									</div>
+									<div class="skill-category">
+										<h4>☁️ Cloud & Databases</h4>
+										<p>AWS, Azure, MySQL<br />PostgreSQL, MongoDB, Hadoop</p>
+									</div>
+									<div class="skill-category">
+										<h4>🧠 ML/AI Expertise</h4>
+										<p>CNN, NLP, LLM, LSTM<br />XGBoost, A/B Testing, RAG</p>
+									</div>
+								</div>
+								
+								<ul class="actions special">
+									<li><a href="about.html" class="button large">Learn More About Me</a></li>
+								</ul>
+							</article>
+
+						<!-- Posts -->
+							<section class="posts">
+								<!-- PROJECT 1: Fashion MNIST (FIRST as requested) -->
+								<article>
+									<header>
+										<h2><a href="https://huggingface.co/spaces/YashChowdhary/fashionmnist-classifier" target="_blank">Fashion MNIST<br />
+										ML Classification</a></h2>
+									</header>
+									<a href="https://huggingface.co/spaces/YashChowdhary/fashionmnist-classifier" class="image fit" target="_blank"><img src="images/pic01.jpg" alt="ML Project" /></a>
+									<p>Achieved 94.6% accuracy on Fashion MNIST using Hugging Face ViT & Google Cloud Vision API. Implemented custom CNN and AutoML solutions with PyTorch and Streamlit for production deployment.</p>
+									<div class="project-tags">
+										<span class="tag">PyTorch</span>
+										<span class="tag">Hugging Face</span>
+										<span class="tag">Computer Vision</span>
+										<span class="tag">Streamlit</span>
+									</div>
+									<ul class="actions special">
+										<li><a href="https://huggingface.co/spaces/YashChowdhary/fashionmnist-classifier" class="button" target="_blank">View Live Demo</a></li>
+									</ul>
+								</article>
+								
+								<!-- PROJECT 2: Cars Database Creation and Analysis -->
+								<article>
+									<header>
+										<h2><a href="https://github.com/ChowdharyYash/Cars-Database-Creation-and-Analysis" target="_blank">Cars Database<br />
+										Fuel Efficiency Analysis</a></h2>
+									</header>
+									<a href="https://github.com/ChowdharyYash/Cars-Database-Creation-and-Analysis" class="image fit" target="_blank"><img src="images/pic02.jpg" alt="Cars Database Analysis" /></a>
+									<p>Built comprehensive database to identify most fuel-efficient cars based on time series analysis and multiple factors. Implemented data mining techniques to extract insights on automotive efficiency trends and patterns.</p>
+									<div class="project-tags">
+										<span class="tag">SQL</span>
+										<span class="tag">Data Mining</span>
+										<span class="tag">Time Series</span>
+										<span class="tag">Python</span>
+									</div>
+									<ul class="actions special">
+										<li><a href="https://github.com/ChowdharyYash/Cars-Database-Creation-and-Analysis" class="button" target="_blank">View on GitHub</a></li>
+									</ul>
+								</article>
+								
+								<!-- PROJECT 3: Electric Vehicle Population Analysis -->
+								<article>
+									<header>
+										<h2><a href="https://github.com/ChowdharyYash/Electric-population-data" target="_blank">Electric Vehicle<br />
+										Population Analysis</a></h2>
+									</header>
+									<a href="https://github.com/ChowdharyYash/Electric-population-data" class="image fit" target="_blank"><img src="images/pic03.jpg" alt="EV Analysis" /></a>
+									<p>Comprehensive analysis of electric vehicle adoption patterns and population data. Utilized Python for data processing and created interactive visualizations to identify trends in EV adoption across different regions.</p>
+									<div class="project-tags">
+										<span class="tag">Python</span>
+										<span class="tag">Data Analysis</span>
+										<span class="tag">Visualization</span>
+										<span class="tag">Pandas</span>
+									</div>
+									<ul class="actions special">
+										<li><a href="https://github.com/ChowdharyYash/Electric-population-data" class="button" target="_blank">View on GitHub</a></li>
+									</ul>
+								</article>
+								
+								<!-- PROJECT 4: Generative AI Strategy Toolkit -->
+								<article>
+									<header>
+										<h2><a href="https://github.com/ChowdharyYash" target="_blank">Generative AI<br />
+										Strategy Toolkit</a></h2>
+									</header>
+									<a href="https://github.com/ChowdharyYash" class="image fit" target="_blank"><img src="images/pic04.jpg" alt="AI Project" /></a>
+									<p>Developed open-source LLM toolkit using GPT-4o for B2B strategy. Deployed custom solutions with Gradio, creating visual diagrams for technical concept simplification and knowledge transfer.</p>
+									<div class="project-tags">
+										<span class="tag">LLM</span>
+										<span class="tag">GPT-4</span>
+										<span class="tag">Gradio</span>
+										<span class="tag">NLP</span>
+									</div>
+									<ul class="actions special">
+										<li><a href="https://github.com/ChowdharyYash" class="button" target="_blank">View Project</a></li>
+									</ul>
+								</article>
+								
+								<!-- PROJECT 5: Sales Analytics Dashboard -->
+								<article>
+									<header>
+										<h2><a href="https://github.com/ChowdharyYash" target="_blank">Sales Analytics<br />
+										Dashboard</a></h2>
+									</header>
+									<a href="https://github.com/ChowdharyYash" class="image fit" target="_blank"><img src="images/pic05.jpg" alt="Analytics Dashboard" /></a>
+									<p>Built end-to-end analytics integrating sales, training & feedback data using AWS S3, Athena, Power BI & SQL. Created comprehensive documentation for cloud-based quoting tools.</p>
+									<div class="project-tags">
+										<span class="tag">AWS</span>
+										<span class="tag">Power BI</span>
+										<span class="tag">SQL</span>
+										<span class="tag">ETL</span>
+									</div>
+									<ul class="actions special">
+										<li><a href="https://github.com/ChowdharyYash" class="button" target="_blank">View Project</a></li>
+									</ul>
+								</article>
+								
+								<!-- PROJECT 6: Real Estate Demand Forecasting -->
+								<article>
+									<header>
+										<h2><a href="https://github.com/ChowdharyYash" target="_blank">Real Estate<br />
+										Demand Forecasting</a></h2>
+									</header>
+									<a href="https://github.com/ChowdharyYash" class="image fit" target="_blank"><img src="images/pic06.jpg" alt="Real Estate Analytics" /></a>
+									<p>Academic internship at Buyer Folio Inc. Built predictive models using TensorFlow & XGBoost for housing demand forecasting. Created dynamic dashboards with Plotly & Tableau for custom reporting.</p>
+									<div class="project-tags">
+										<span class="tag">TensorFlow</span>
+										<span class="tag">XGBoost</span>
+										<span class="tag">Plotly</span>
+										<span class="tag">Tableau</span>
+									</div>
+									<ul class="actions special">
+										<li><a href="https://github.com/ChowdharyYash" class="button" target="_blank">Details Coming Soon</a></li>
+									</ul>
+								</article>
+								
+								<!-- PROJECT 7: AI Synthetic Data Detection Research -->
+								<article>
+									<header>
+										<h2><a href="https://github.com/ChowdharyYash" target="_blank">AI Synthetic Data<br />
+										Detection Research</a></h2>
+									</header>
+									<a href="https://github.com/ChowdharyYash" class="image fit" target="_blank"><img src="images/pic07.jpg" alt="AI Research" /></a>
+									<p>Research assistant at Northeastern University. Developing ML models to detect AI-generated content using Python & TensorFlow. Analyzed 20+ peer-reviewed papers for methodology gaps.</p>
+									<div class="project-tags">
+										<span class="tag">Research</span>
+										<span class="tag">AI Detection</span>
+										<span class="tag">TensorFlow</span>
+										<span class="tag">Academic</span>
+									</div>
+									<ul class="actions special">
+										<li><a href="https://github.com/ChowdharyYash" class="button" target="_blank">Research in Progress</a></li>
+									</ul>
+								</article>
+								
+								<!-- TEMPLATE FOR FUTURE PROJECTS - KEEP THIS COMMENTED -->
+								<!-- 
+								<article>
+									<header>
+										<h2><a href="https://github.com/ChowdharyYash/PROJECT-NAME" target="_blank">Project Title<br />
+										Second Line</a></h2>
+									</header>
+									<a href="https://github.com/ChowdharyYash/PROJECT-NAME" class="image fit" target="_blank"><img src="images/pic08.jpg" alt="Project Description" /></a>
+									<p>Project description goes here. Include key technologies used, outcomes achieved, and impact created.</p>
+									<div class="project-tags">
+										<span class="tag">Technology 1</span>
+										<span class="tag">Technology 2</span>
+										<span class="tag">Technology 3</span>
+									</div>
+									<ul class="actions special">
+										<li><a href="https://github.com/ChowdharyYash/PROJECT-NAME" class="button" target="_blank">View Project</a></li>
+									</ul>
+								</article>
+								-->
+							</section>
+
+						<!-- Footer -->
+							<!-- REMOVED: Pagination as not needed for portfolio -->
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<!-- CHANGED: Updated form for professional contact -->
+							<form method="post" action="#">
+								<h3>Let's Connect</h3>
+								<p>I'm actively seeking full-time opportunities in Data Science and Machine Learning. Whether you have a challenging problem, an exciting opportunity, or just want to discuss the latest in AI/ML, I'd love to hear from you!</p>
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+								<!-- ADDED: Note about form functionality -->
+								<p style="font-size: 0.8em; color: var(--text-slate);">Note: Contact form integration coming soon. Please reach out via email or LinkedIn for now.</p>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Location</h3>
+								<!-- CHANGED: Updated location as requested -->
+								<p>United States</p>
+							</section>
+							<!-- REMOVED: Phone section as requested -->
+							<section>
+								<h3>Email</h3>
+								<!-- CHANGED: Updated with Yash's email -->
+								<p><a href="mailto:chowdhary.y@northeastern.edu">chowdhary.y@northeastern.edu</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<!-- CHANGED: Updated with actual social links -->
+									<li><a href="https://www.linkedin.com/in/yash1120" class="icon brands alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/ChowdharyYash" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+									<li><a href="mailto:chowdhary.y@northeastern.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<!-- CHANGED: Updated copyright -->
+						<ul><li>&copy; 2025 Yash Chowdhary</li><li>Design: <a href="https://html5up.net">HTML5 UP</a> | Customized for Data Science Portfolio</li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+			<!-- ADDED: Custom JavaScript for interactive elements -->
+			<script>
+				// Add subtle hover effects to skill categories
+				document.querySelectorAll('.skill-category').forEach(item => {
+					item.addEventListener('mouseenter', function() {
+						this.style.transform = 'translateY(-5px)';
+						this.style.boxShadow = '0 10px 20px rgba(74, 144, 226, 0.2)';
+					});
+					item.addEventListener('mouseleave', function() {
+						this.style.transform = 'translateY(0)';
+						this.style.boxShadow = 'none';
+					});
+				});
+				
+				// Animate stats on scroll
+				function animateStats() {
+					const stats = document.querySelectorAll('.stat-number');
+					stats.forEach(stat => {
+						const target = parseInt(stat.innerText);
+						let current = 0;
+						const increment = target / 50;
+						const timer = setInterval(() => {
+							current += increment;
+							if (current >= target) {
+								current = target;
+								clearInterval(timer);
+							}
+							stat.innerText = Math.floor(current) + (stat.innerText.includes('+') ? '+' : stat.innerText.includes('%') ? '%' : '');
+						}, 30);
+					});
+				}
+				
+				// Trigger animation when stats section is visible
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							animateStats();
+							observer.unobserve(entry.target);
+						}
+					});
+				});
+				
+				const statsSection = document.querySelector('.stats-section');
+				if (statsSection) {
+					observer.observe(statsSection);
+				}
+			</script>
+
+	</body>
+</html>
